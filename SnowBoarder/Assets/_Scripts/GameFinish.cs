@@ -19,6 +19,7 @@ public class GameFinish : MonoBehaviour
 		if(collision.tag == "Player")
 		{
 			Debug.Log("Player has reached the finish line");
+			SceneManager.LoadScene(0, LoadSceneMode.Single);
 		}
 	}
 	#endregion
