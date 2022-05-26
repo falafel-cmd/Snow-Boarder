@@ -9,20 +9,17 @@ public class CrashDetection : MonoBehaviour
 
 	#region Variables
 	#endregion
-	
+
 	#region Unity Methods
-	
-    void Start()
-    {
-        
-    }
 
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if(collision.tag == "Player")
+		{
+			Debug.Log("Ouch!!");
+		}
+	}
 
-    void Update()
-    {
-        
-    }
-	
 	#endregion
-	
+
 }
