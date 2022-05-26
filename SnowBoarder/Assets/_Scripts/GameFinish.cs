@@ -3,6 +3,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameFinish : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class GameFinish : MonoBehaviour
 		if(collision.tag == "Player")
 		{
 			Debug.Log("Player has reached the finish line");
+			SceneManager.LoadScene(0);
 		}
 	}
 	#endregion
