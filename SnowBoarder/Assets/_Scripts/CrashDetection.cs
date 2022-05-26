@@ -18,7 +18,7 @@ public class CrashDetection : MonoBehaviour
 		if(collision.tag == "Player")
 		{
 			Debug.Log("Ouch!!");
-			SceneManager.LoadScene(0, LoadSceneMode.Single);
+			SceneManager.LoadScene(0);
 		}
 	}
 
