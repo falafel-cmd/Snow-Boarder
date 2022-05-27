@@ -9,7 +9,7 @@ public class CrashDetection : MonoBehaviour
 {
 
 	#region Variables
-	[SerializeField] float reloadDelay = 0.75f;
+	[SerializeField] float reloadDelay = 1.25f;
 	#endregion
 
 	#region Unity Methods
