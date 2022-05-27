@@ -9,7 +9,7 @@ public class GameFinish : MonoBehaviour
 {
 
 	#region Variables
-
+	[SerializeField] float levelChangeDelay = 1.25f;
 	#endregion
 
 	#region Unity Methods
@@ -19,8 +19,13 @@ public class GameFinish : MonoBehaviour
 		if(collision.tag == "Player")
 		{
 			Debug.Log("Player has reached the finish line");
-			SceneManager.LoadScene(0);
+			Invoke("ReloadScene", levelChangeDelay);
 		}
+	}
+
+	void ReloadScene()
+	{
+		SceneManager.LoadScene(0);
 	}
 	#endregion
 

@@ -9,6 +9,7 @@ public class CrashDetection : MonoBehaviour
 {
 
 	#region Variables
+	[SerializeField] float reloadDelay = 0.75f;
 	#endregion
 
 	#region Unity Methods
@@ -18,8 +19,13 @@ public class CrashDetection : MonoBehaviour
 		if(collision.tag == "Player")
 		{
 			Debug.Log("Ouch!!");
-			SceneManager.LoadScene(0);
+			Invoke("ReloadScene", reloadDelay);
 		}
+	}
+
+	void ReloadScene()
+	{
+		SceneManager.LoadScene(0);
 	}
 
 	#endregion
