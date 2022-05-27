@@ -10,6 +10,7 @@ public class CrashDetection : MonoBehaviour
 
 	#region Variables
 	[SerializeField] float reloadDelay = 1.25f;
+	[SerializeField] ParticleSystem crashFX;
 	#endregion
 
 	#region Unity Methods
@@ -18,6 +19,7 @@ public class CrashDetection : MonoBehaviour
 	{
 		if(collision.tag == "Player")
 		{
+			crashFX.Play();
 			Debug.Log("Ouch!!");
 			Invoke("ReloadScene", reloadDelay);
 		}
