@@ -17,7 +17,7 @@ public class CrashDetection : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if(collision.tag == "Player")
+		if(collision.tag == "Ground")
 		{
 			crashFX.Play();
 			Debug.Log("Ouch!!");
