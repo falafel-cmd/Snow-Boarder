@@ -12,8 +12,8 @@ public class PlayerController : MonoBehaviour
 
 	Rigidbody2D rb2d;
 	[SerializeField] float playerTorque = 1.5f;
-	float playerSpeed = 10f;
-	float playerBoost = 20f;
+	[SerializeField] float playerSpeed = 10f;
+	[SerializeField] float playerBoost = 50f;
 	SurfaceEffector2D surfaceEffector2D;
 
 	#endregion
@@ -34,13 +34,13 @@ public class PlayerController : MonoBehaviour
 
 	private void PlayerBoost()
 	{
-		if (Input.GetKey(KeyCode.B))
+		if (Input.GetKey(KeyCode.UpArrow))
 		{
-			surfaceEffector2D.forceScale = playerBoost;
+			surfaceEffector2D.speed = playerBoost;
 		}
 		else
 		{
-			surfaceEffector2D.forceScale = playerSpeed;
+			surfaceEffector2D.speed = playerSpeed;
 		}
 	}
 
