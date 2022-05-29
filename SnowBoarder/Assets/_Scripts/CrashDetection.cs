@@ -11,6 +11,7 @@ public class CrashDetection : MonoBehaviour
 	#region Variables
 	[SerializeField] float reloadDelay = 1.25f;
 	[SerializeField] ParticleSystem crashFX;
+	[SerializeField] AudioSource crashSound;
 	#endregion
 
 	#region Unity Methods
@@ -19,7 +20,9 @@ public class CrashDetection : MonoBehaviour
 	{
 		if(collision.tag == "Ground")
 		{
+			FindObjectOfType<PlayerController>().DisableControls();
 			crashFX.Play();
+			crashSound.Play();
 			Debug.Log("Ouch!!");
 			Invoke("ReloadScene", reloadDelay);
 		}

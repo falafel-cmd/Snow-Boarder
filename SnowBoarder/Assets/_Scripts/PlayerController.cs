@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] float playerSpeed = 10f;
 	[SerializeField] float playerBoost = 50f;
 	SurfaceEffector2D surfaceEffector2D;
+	bool canMove = true;
 
 	#endregion
 
@@ -28,8 +29,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-		RotatePlayer();
-		PlayerBoost();
+		if (canMove)
+		{
+			RotatePlayer();
+			PlayerBoost();
+		}
     }
 
 	private void PlayerBoost()
@@ -55,6 +59,11 @@ public class PlayerController : MonoBehaviour
 		{
 			rb2d.AddTorque(-(playerTorque));
 		}
+	}
+
+	public void DisableControls()
+	{
+		canMove = false;
 	}
 
 	#endregion
