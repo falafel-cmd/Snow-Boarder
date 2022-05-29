@@ -11393,6 +11393,7 @@ GameObject:
   - component: {fileID: 1143684432}
   - component: {fileID: 1143684433}
   - component: {fileID: 1143684434}
+  - component: {fileID: 1143684435}
   m_Layer: 0
   m_Name: Crazy Dave
   m_TagString: Player
@@ -11501,6 +11502,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reloadDelay: 0.75
   crashFX: {fileID: 1519162228}
+--- !u!114 &1143684435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143684428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 973f984d130e48449a7d2acd896ebf53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trailFX: {fileID: 445329044}
 --- !u!1 &1488551723
 GameObject:
   m_ObjectHideFlags: 0
@@ -11544,8 +11558,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1492737946}
   - component: {fileID: 1492737947}
-  - component: {fileID: 1492737949}
-  - component: {fileID: 1492737948}
   m_Layer: 0
   m_Name: Boarder_Bottom
   m_TagString: Untagged
@@ -11620,35 +11632,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1492737948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1492737945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 973f984d130e48449a7d2acd896ebf53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trailFX: {fileID: 445329044}
---- !u!70 &1492737949
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1492737945}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.06, y: -0.5074535}
-  m_Size: {x: 2.8961556, y: 0.26402518}
-  m_Direction: 1
 --- !u!1 &1519162225
 GameObject:
   m_ObjectHideFlags: 0
@@ -11661,7 +11644,7 @@ GameObject:
   - component: {fileID: 1519162228}
   - component: {fileID: 1519162227}
   m_Layer: 0
-  m_Name: BleedingParticle
+  m_Name: crashFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
