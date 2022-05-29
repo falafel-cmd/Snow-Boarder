@@ -12,14 +12,16 @@ public class CrashDetection : MonoBehaviour
 	[SerializeField] float reloadDelay = 1.25f;
 	[SerializeField] ParticleSystem crashFX;
 	[SerializeField] AudioSource crashSound;
+	bool crashOccur = false;
 	#endregion
 
 	#region Unity Methods
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if(collision.tag == "Ground")
+		if(collision.tag == "Ground" && !crashOccur)
 		{
+			crashOccur = true;
 			FindObjectOfType<PlayerController>().DisableControls();
 			crashFX.Play();
 			crashSound.Play();
