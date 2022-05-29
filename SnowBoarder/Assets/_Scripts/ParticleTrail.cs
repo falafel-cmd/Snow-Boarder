@@ -13,21 +13,22 @@ public class ParticleTrail : MonoBehaviour
 
 	#region Unity Methods
 
-	private void OnTriggerEnter2D(Collider2D collision)
+	private void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.tag == "Ground")
+		if (collision.gameObject.tag == "Ground")
+		{
+			trailFX.Play();
+		}
+	}
+
+	private void OnCollisionExit2D(Collision2D collision)
+	{
+		if (collision.gameObject.tag == "Ground")
 		{
 			trailFX.Pause();
 		}
 	}
 
-	private void OnTriggerExit2D(Collider2D collision)
-	{
-		if (collision.tag == "Ground")
-		{
-			trailFX.Play();
-		}
-	}
 	#endregion
 
 }
