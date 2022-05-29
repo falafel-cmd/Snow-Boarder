@@ -11,6 +11,7 @@ public class GameFinish : MonoBehaviour
 	#region Variables
 	[SerializeField] float levelChangeDelay = 1.25f;
 	[SerializeField] ParticleSystem finishFX;
+	[SerializeField] AudioSource finishSound;
 	#endregion
 
 	#region Unity Methods
@@ -20,6 +21,7 @@ public class GameFinish : MonoBehaviour
 		if(collision.tag == "Player")
 		{
 			finishFX.Play();
+			finishSound.Play();
 			Debug.Log("Player has reached the finish line");
 			Invoke("ReloadScene", levelChangeDelay);
 		}
