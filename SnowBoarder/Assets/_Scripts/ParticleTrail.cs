@@ -15,17 +15,17 @@ public class ParticleTrail : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.tag == "Ground")
+		if (collision.tag == "Player")
 		{
-			trailFX.Pause();
+			trailFX.Play();
 		}
 	}
 
 	private void OnTriggerExit2D(Collider2D collision)
 	{
-		if (collision.tag == "Ground")
+		if (collision.tag == "Player")
 		{
-			trailFX.Play();
+			trailFX.Pause();
 		}
 	}
 	#endregion
